@@ -26,11 +26,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
 // By default mongoose uses callbacks for async queries, we're setting it to use promises (.then syntax) instead 
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/tech-scraperdb";  
 // Connect to the Mongo DB 
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/tech-scraperdb", {
-    // useMongoClient: true
-});
+mongoose.connect(MONGODB_URI, {
+    //useMongoClient: true
+  });
+
+
+
+
 
 
 app.listen(PORT, function(){
