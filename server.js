@@ -35,8 +35,17 @@ mongoose.connect(MONGODB_URI, {
 });
 
 //routes
+//route for home page
+app.get("/", function(req, res){
+    res.render("home")
+});
 
-//get route to scrape engadget
+//route for saved articles
+app.get("/saved", function(req, res){
+    res.render("saved_posts")
+});
+
+//get route to scrape phandroid
 app.get("/scrape", function (req, res) {
 
 
