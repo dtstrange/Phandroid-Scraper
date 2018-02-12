@@ -35,10 +35,7 @@ mongoose.connect(MONGODB_URI, {
 });
 
 //routes
-//route for home page
-app.get("/", function(req, res){
-    res.render("home")
-});
+
 
 //route for saved articles
 app.get("/saved", function(req, res){
@@ -96,14 +93,17 @@ app.get("/scrape", function (req, res) {
 });
 
 //route to get all articles
-app.get("/articles", function(req, res){
-    db.Article.find({})
-    .then(function(dbArticle){
-        res.json(dbArticle)
+app.get("/", function(req, res){
+    db.Article.find({}).sort({_id: -1})
+    .exec(function(err, doc){
+        if(err){
+            console.error(err)
+        }
+        else{
+            var hbsObject = {articles: doc};
+            res.render("home", hbsObject);
+        }
     })
-    .catch(function(err){
-        res.json(err);
-    });
 });
 
 //route to get article with id with note

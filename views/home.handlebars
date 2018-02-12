@@ -1,0 +1,22 @@
+<h1>Phandriod Articles</h1>
+{{#each articles}}
+    <ul>
+        <li>
+            <div class="imageDiv">
+                
+                    {{!-- image --}}
+                    <img class="img-responsive" src="{{image}}" >
+                
+            </div>
+            <div id="titleDiv">
+                <a href="{{link}}">
+                    {{title}}
+                </a>
+            </div>
+            <div id="summary">
+                <p>{{summary}}</p>
+            </div>
+            
+        </li>
+    </ul>
+{{/each}}

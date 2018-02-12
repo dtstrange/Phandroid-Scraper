@@ -1,0 +1,9 @@
+.navbar-btn{
+    margin-top:10px;
+}
+
+.imageDiv{
+    background-repeat: no-repeat;
+    min-height: 100px;
+    max-height: 250px;
+}
