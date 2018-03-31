@@ -7,3 +7,10 @@
     min-height: 100px;
     max-height: 250px;
 }
+
+.jumbrotron{
+    image: url("/assets/images/andriod-rain-text.jpg");
+    height: auto;
+    width: auto;
+    
+}

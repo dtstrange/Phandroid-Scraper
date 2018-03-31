@@ -14,8 +14,10 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="/assets/css/style.css">
-    <script href="/assets/js/js.js"></script>
+    <script src="/assets/js/js.js"></script>
+
 
 </head>
 
@@ -47,23 +49,30 @@
                     </li>
 
                 </ul>
-                
+
                 <div>
-                    <button id="scrape" class="btn btn-warning navbar-btn" type="button">Scrape</button>    
+                    <button id="scrape" class="btn btn-warning navbar-btn" type="button" onclick="scrape()">Scrape</button>
                 </div>
-                
-                
+
+
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
-    <div class="jumbotron">
-        <div class="container">
-            <img class="img-responsive" src="/assets/images/android-rain-text.jpg" alt="Welcome Phandroid Fan">
-        </div>
-    </div>
+
     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <div class="container">
+                        <img 
+                        class="img-responsive" 
+                        src="/assets/images/android-rain-text.jpg" alt="Welcome Phandroid Fan">
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 {{{body}}}

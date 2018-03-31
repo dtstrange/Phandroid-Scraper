@@ -1,9 +1,7 @@
-$("#scrape").on("click", function(){
-    $.ajax({
-        url: '/scrape',
-        mehtod:'GET'
+function scrape(){
+    axios.get("/scrape")
+    .then(resp =>{
+        console.log(resp)
+        location.href = "/"
     })
-    .done(
-        location.reload()
-    )
-});
+}
